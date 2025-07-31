@@ -1,11 +1,11 @@
-import {HelpScoutArticlePublishStatus} from "../types/common";
+import {ArticlePublishStatus} from "./article-publish-status";
 
 export type ArticleRef = {
     id: string;
     number: number;
     collectionId: string;
     slug: string;
-    status: HelpScoutArticlePublishStatus;
+    status: ArticlePublishStatus;
     hasDraft: boolean;
     name: string;
     publicUrl: string;

@@ -1,5 +1,4 @@
 import {buildUrl, sendGetRequest} from "../http-utils";
-import {HelpScoutArticleRefCollection} from "../types/article-ref";
 import {CollectionResponse} from "./collection-response";
 import {ArticleRef} from "./article-ref";
 
