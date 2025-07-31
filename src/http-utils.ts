@@ -1,5 +1,3 @@
-import fetch from "isomorphic-unfetch";
-
 export function buildUrl(urlString: string, query?: Record<string, string | number | boolean>) {
     const url = new URL(`https://docsapi.helpscout.net${urlString}`);
 
