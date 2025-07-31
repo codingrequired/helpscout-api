@@ -1,0 +1,30 @@
+{
+  "name": "@codingrequired/helpscout-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap"
+  },
+  "keywords": [],
+  "author": "codingrequired",
+  "license": "ISC",
+  "dependencies": {
+    "isomorphic-unfetch": "^4.0.2",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  },
+  "files": [
+    "dist"
+  ]
+}
