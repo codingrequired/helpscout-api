@@ -4,10 +4,6 @@ A TypeScript client library for the Help Scout Docs API, providing a simple and 
 
 ## Installation
 
-This package is published to GitHub Packages. To install it, you'll need to configure npm to use GitHub Packages for the `@codingrequired` scope.
-
-
-3. Install the package:
 ```bash
 npm install @codingrequired/helpscout-api
 ```
@@ -97,4 +93,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 - [Help Scout Docs API Documentation](https://developer.helpscout.com/docs-api/)
 - [GitHub Repository](https://github.com/codingrequired/helpscout-api)
-- [GitHub Package](https://github.com/codingrequired/helpscout-api/packages)
+- [npm Package](https://www.npmjs.com/package/@codingrequired/helpscout-api)
