@@ -1,6 +1,6 @@
 {
   "name": "@codingrequired/helpscout-api",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.m.js",
@@ -16,7 +16,11 @@
   },
   "keywords": [],
   "author": "codingrequired",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codingrequired/helpscout-api"
+  },
   "dependencies": {
     "isomorphic-unfetch": "^4.0.2",
     "typescript": "^5.7.2"
