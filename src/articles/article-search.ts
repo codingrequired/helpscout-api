@@ -10,6 +10,7 @@ export type ArticleSearch = {
     name: string;
     publicUrl: string;
     popularity: number;
+    preview: string;
     viewCount: number;
     createdBy: number;
     updatedBy: number;
