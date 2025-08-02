@@ -1,3 +1,5 @@
 export * from './create-docs-api-client'
 export * from './articles'
+export * from './categories'
+export * from './assets'
 export * from './http-utils'
