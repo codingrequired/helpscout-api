@@ -1,5 +1,5 @@
 export type CategoryVisibility = 'public' | 'private';
-export type CategoryDefaultSort = 'custom' | 'popularity' | 'name';
+export type CategoryDefaultSort = 'custom' | 'popularity' | 'name' | 'updatedAt';
 
 export type Category = {
     id: string;

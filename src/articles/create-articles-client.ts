@@ -1,4 +1,3 @@
-import {listArticles, ListArticlesRequest, ListArticlesResponse} from "./list-articles";
 import {searchArticles, SearchArticlesRequest, SearchArticlesResponse} from "./search-articles";
 import {listRelatedArticles, ListRelatedArticlesRequest, ListRelatedArticlesResponse} from "./list-related-articles";
 import {listRevisions, ListRevisionsRequest, ListRevisionsResponse} from "./list-revisions";
@@ -10,9 +9,20 @@ import {updateViewCount, UpdateViewCountRequest} from "./update-view-count";
 import {deleteArticle} from "./delete-article";
 import {saveArticleDraft, SaveArticleDraftRequest} from "./save-article-draft";
 import {deleteArticleDraft, DeleteArticleDraftRequest} from "./delete-article-draft";
+import {
+    listArticlesByCollection,
+    ListArticlesByCollectionRequest,
+    ListArticlesByCollectionResponse
+} from "./list-articles-by-collections";
+import {
+    ListArticlesByCategoriesResponse,
+    listArticlesByCategory,
+    ListArticlesByCategoryRequest
+} from "./list-articles-by-category";
 
 export type ArticlesClient = {
-    listArticles: (request: ListArticlesRequest) => Promise<ListArticlesResponse>;
+    listArticlesByCollection: (request: ListArticlesByCollectionRequest) => Promise<ListArticlesByCollectionResponse>;
+    listArticlesByCategory: (request: ListArticlesByCategoryRequest) => Promise<ListArticlesByCategoriesResponse>;
     searchArticles: (request: SearchArticlesRequest) => Promise<SearchArticlesResponse>;
     listRelatedArticles: (request: ListRelatedArticlesRequest) => Promise<ListRelatedArticlesResponse>;
     listRevisions: (request: ListRevisionsRequest) => Promise<ListRevisionsResponse>;
@@ -29,7 +39,8 @@ export type ArticlesClient = {
 
 export function createArticlesClient(apiKey: string): ArticlesClient {
     return {
-        listArticles: (request: ListArticlesRequest) => listArticles(apiKey, request),
+        listArticlesByCollection: (request: ListArticlesByCollectionRequest) => listArticlesByCollection(apiKey, request),
+        listArticlesByCategory: (request: ListArticlesByCategoryRequest) => listArticlesByCategory(apiKey, request),
         searchArticles: (request: SearchArticlesRequest) => searchArticles(apiKey, request),
         listRelatedArticles: (request: ListRelatedArticlesRequest) => listRelatedArticles(apiKey, request),
         listRevisions: (request: ListRevisionsRequest) => listRevisions(apiKey, request),
