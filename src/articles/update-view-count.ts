@@ -6,7 +6,7 @@ export type UpdateViewCountRequest = {
 }
 
 export async function updateViewCount(apiKey: string, request: UpdateViewCountRequest) {
-    const {articleId, ...body} = request;
+    const {articleId} = request;
     const url = buildUrl(`/v1/articles/${articleId}/views`, {reload: true});
-    return await sendPutRequestIgnoreResponse({url, apiKey: apiKey, body})
+    return await sendPutRequestIgnoreResponse({url, apiKey: apiKey})
 }

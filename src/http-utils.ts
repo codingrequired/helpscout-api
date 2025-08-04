@@ -83,18 +83,21 @@ export async function sendPostRequest<T>(props: SendPostRequestProps): Promise<T
 export type SendPutRequestProps = {
     url: string;
     apiKey: string;
-    body: object;
+    body?: object;
     options?: RequestInit;
 }
 
 export async function sendPutRequest<T>(props: SendPutRequestProps): Promise<T> {
+    const options: RequestInit = {
+        ...props.options,
+        method: 'PUT',
+    };
+
+    addBodyIfPresent(options, props.body);
+
     const response = await sendBasicAuthRequest({
         ...props,
-        options: {
-            ...props.options,
-            method: 'PUT',
-            body: JSON.stringify(props.body)
-        }
+        options: options
     });
 
     if (response.ok) {
@@ -106,13 +109,16 @@ export async function sendPutRequest<T>(props: SendPutRequestProps): Promise<T> 
 }
 
 export async function sendPutRequestIgnoreResponse(props: SendPutRequestProps) {
+    const options: RequestInit = {
+        ...props.options,
+        method: 'PUT',
+    };
+
+    addBodyIfPresent(options, props.body);
+
     const response = await sendBasicAuthRequest({
         ...props,
-        options: {
-            ...props.options,
-            method: 'PUT',
-            body: JSON.stringify(props.body)
-        }
+        options: options
     });
 
     if (response.ok) {
@@ -142,4 +148,10 @@ export async function sendDeleteRequest(props: SendDeleteRequestProps): Promise<
     }
 
     throw new Error(response.statusText);
+}
+
+function addBodyIfPresent(request: RequestInit, body: object) {
+    if (body) {
+        request.body = JSON.stringify(body);
+    }
 }
